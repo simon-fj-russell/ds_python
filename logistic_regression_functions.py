@@ -21,11 +21,11 @@ df['Age'] = df['Age'].fillna(df['Age'].median())
 df['Sex'] = df['Sex'].replace(['male', 'female'], [1, 0])
 df = df.rename(columns={'Sex': 'is_male'})
 
-# Check that it worked.
-print(df.info())
-
 # Or you can use an apply lambda function (like an if statement).
 # df['Sex'] = df['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+
+# Check that it worked.
+print(df.info())
 
 # Check the correlation between the “feature” columns and the “Target” column.
 correlation = df.corr().loc[['Pclass', 'Age', 'is_male', 'SibSp', 'Fare', 'Parch'], ['Survived']]
