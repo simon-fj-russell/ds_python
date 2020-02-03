@@ -162,6 +162,7 @@ final_model = GradientBoostingClassifier(learning_rate= 0.2, n_estimators= 100)
 # Train the model.
 final_model.fit(X_train, y_train)
 # Get the probability of a person surviving.
+# Returns an array with 2 columns for each value. Fist number being predict 0, second predict 1.
 final_pred_prob = final_model.predict_proba(X_test)[:,1]
 
 # Getting ROC Curve fit
